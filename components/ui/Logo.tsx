@@ -15,7 +15,7 @@ const Logo = () => {
     >
       <Link href="/" className="block">
         <Image
-          src="/escos/logo1.png"
+          src="/escos/logo2.png"
           alt="Rs Logo"
           width={520}
           height={180}
@@ -24,8 +24,8 @@ const Logo = () => {
             w-auto
             h-16        /* mobile */
             md:h-16     /* tablet */
-            lg:h-24     /* desktop */
-            xl:h-28     /* large desktop */
+            lg:h-20     /* desktop */
+            xl:h-20     /* large desktop */
             object-contain
           "
         />

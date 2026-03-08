@@ -9,10 +9,10 @@ import LiveRadio from "@/components/ui/LiveRadio";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Rs Services",
-    default: "Rs Services",
+    template: "%s - Hoosier Helpers Senior Care",
+    default: "Hoosier Helpers Senior Care",
 },
-description: "Licensed electrician serving the Orange & Lawrence County areas offering electrical and home repair services."
+description: "Hoosier Helpers Senior Care proudly serves Orange & Lawrence County, Indiana — providing compassionate, non-medical personal care services so seniors can remain safe and independent at home."
 };
 
 export default function RootLayout({

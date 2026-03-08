@@ -11,9 +11,9 @@ const ComingSoonPage = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-[#04398c]/10 text-[#04398c] text-sm font-semibold"
+          className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-[#04398c]/10 text-[#a81414] text-sm font-semibold"
         >
-          <span className="w-2 h-2 rounded-full bg-[#04398c] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#a81414] animate-pulse" />
           Coming Soon
         </motion.div>
 
@@ -22,7 +22,7 @@ const ComingSoonPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-[#04398c]"
+          className="text-4xl md:text-5xl font-bold text-[#a81414]"
         >
           Something Great Is On The Way
         </motion.h1>
@@ -32,7 +32,7 @@ const ComingSoonPage = () => {
           initial={{ width: 0 }}
           animate={{ width: "120px" }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="h-1 bg-[#04398c] mx-auto my-6 rounded-full"
+          className="h-1 bg-[#a81414] mx-auto my-6 rounded-full"
         />
 
         {/* Description */}
@@ -44,7 +44,7 @@ const ComingSoonPage = () => {
         >
           We’re working behind the scenes to bring you something new.
           Check back soon for updates, events, and exciting announcements
-          from Escos.
+          from Hoosier Helpers.
         </motion.p>
 
         {/* Optional CTA */}

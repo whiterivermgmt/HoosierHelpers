@@ -39,7 +39,7 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
 
   const socialLinks = [
     {
-      href: "https://www.facebook.com/profile.php?id=61583190522481",
+      href: "https://www.facebook.com/profile.php?id=61587292422062",
       icon: <SiFacebook />,
       bg: "#1877F2", 
       name: "Facebook",
@@ -85,27 +85,27 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
     flex flex-col justify-between
     rounded-r-3xl
     shadow-xl
-    bg-white
+    bg-[#f7f5eb]
   "
   initial={{ x: "-100%" }}
   animate={{ x: isOpen ? 0 : "-100%" }}
   transition={{ type: "spring", stiffness: 200, damping: 25 }}
 >
   {/* Logo + Close Button */}
-  <div className="flex justify-between items-center p-6 border-b border-[#04398c]/20">
+  <div className="flex justify-between items-center p-6 border-b border-[#c91515]/20">
     <Logo />
 
     <button
       onClick={handleClose}
       className="
         p-2 rounded-full
-        hover:bg-[#04398c]/10
+        hover:bg-[#c91515]/10
         cursor-pointer
         transition-colors
       "
       aria-label="Close Menu"
     >
-      <X className="w-6 h-6 text-[#04398c]" />
+      <X className="w-6 h-6 text-[#c91515]" />
     </button>
   </div>
 
@@ -130,10 +130,10 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
                     transition-all duration-200
                     ${
                       isActive || isOpen
-                        ? "bg-[#04398c] text-white shadow-sm"
-                        : "bg-white text-[#04398c]"
+                        ? "bg-[#c91515] text-white shadow-sm"
+                        : "bg-[#f7f5eb] text-[#c91515]"
                     }
-                    hover:bg-[#04398c]/10
+                    hover:bg-[#c91515]/10
                   `}
                   onClick={() =>
                     hasSubmenu ? toggleSubmenu(idx) : handleClose()
@@ -157,7 +157,7 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
                         w-5 h-5
                         transition-transform duration-200
                         ${isOpen ? "rotate-180" : ""}
-                        ${isActive || isOpen ? "text-white" : "text-[#04398c]"}
+                        ${isActive || isOpen ? "text-white" : "text-[#c91515]"}
                       `}
                     />
                   )}
@@ -196,10 +196,10 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
                               transition-colors duration-200
                               ${
                                 isSubActive
-                                  ? "bg-[#04398c] text-white"
-                                  : "text-[#04398c]"
+                                  ? "bg-[#c91515] text-white"
+                                  : "text-[#c91515]"
                               }
-                              hover:bg-[#04398c]/10
+                              hover:bg-[#c91515]/10
                             `}
                           >
                             {sub.title}

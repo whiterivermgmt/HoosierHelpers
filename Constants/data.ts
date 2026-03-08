@@ -15,13 +15,13 @@ export const headerData = [
 
   {
     title: "About",
-    href: "/about",
+    href: "/",
     side: "left",
     submenu: [
       { title: "About Us", href: "/faq", icon: BookOpen },
       { title: "Gallery", href: "/faq", icon: Image },
       { title: "Contact", href: "/faq", icon: PhoneForwardedIcon },
-      { title: "Join Our Team", href: "/faq", icon: ClipboardList },
+      { title: "Our Team", href: "/faq", icon: ClipboardList },
       {
         title: "FAQ",
         href: "/faq",
@@ -29,8 +29,8 @@ export const headerData = [
       },
     ],
   },
-  { title: "Residential", href: "/faq" },
-  { title: "Commercial", href: "/faq" },
+  { title: "Services", href: "/faq" },
+  { title: "Blog", href: "/faq" },
   
 
 ];

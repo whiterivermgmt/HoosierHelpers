@@ -1,49 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import MenuGallery from "@/components/ui/MenuGallery";
 import EventsBanner from "@/components/ui/EventsBanner";
 import Calendar from "@/components/ui/Calender";
 import Reviews from "@/components/ui/Reviews";
 import SocialMediaHeader from "@/components/ui/SocialMediaHeader";
 import HomeShow from "@/components/ui/HomeShow";
-import Link from "next/link";
 import HomeGallery from "@/components/ui/HomeGallery";
 import Locations from "@/components/ui/Locations";
-import HomeBanner from "@/components/HomerBanner1";
 import HeroBanner from "@/components/ui/HeroBanner";
-import WhyChooseEscos from "@/components/ui/WhyEscos";
 import WhyEscos from "@/components/ui/WhyEscos";
-
-
+import CTABanner from "@/components/ui/CTAbanner";
 
 const HomePage = () => {
-  const [selectedImg, setSelectedImg] = useState<string | null>(null);
-
   return (
-    <main className="bg-white px-4  flex flex-col items-center space-y-20">
+    <main className="flex flex-col">
 
+      {/* Hero — flush to header, no gap */}
+      <HeroBanner />
 
-      {/* Hero Section */}
-      <section className="relative w-full mt-6">
-        <HeroBanner />
-  
-      </section>
-            <Locations />
-            <WhyEscos />
-
+      {/* Every section flows directly, no wrappers adding margin */}
+      <Locations />
+      <WhyEscos />
       <HomeShow />
-    
-      <section className="w-full max-w-6xl">
-        <Calendar />
-      </section>
+      <Calendar />
+      <HomeGallery />
+      <CTABanner />
 
-
-      <section className="w-full max-w-6xl">
-        <HomeGallery />
-      </section>
     </main>
   );
 };

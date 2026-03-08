@@ -2,177 +2,118 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Container from "@/components/ui/Container";
+import Link from "next/link";
 
-const ContactSection = () => {
+const testimonials = [
+  {
+    title: "Life-Enriching Support",
+    text: "Hoosier Helpers transformed my father's life. The caregivers are kind, attentive, and truly compassionate. I am so grateful for their dedication and support during this time.",
+    name: "Henry Thompson",
+    initials: "HT",
+  },
+  {
+    title: "Heartfelt Companionship",
+    text: "The companionship my grandmother receives has been life-changing. She now enjoys daily activities and conversations, which have greatly improved her mood and overall well-being.",
+    name: "Sophia Martinez",
+    initials: "SM",
+  },
+  {
+    title: "Outstanding Experience",
+    text: "Our experience with Hoosier Helpers has been outstanding. The caregivers genuinely care about their clients, making a positive impact on our family's life. Thank you!",
+    name: "Michael Donovan",
+    initials: "MD",
+  },
+  {
+    title: "Always Dependable",
+    text: "Their availability has been a lifesaver. The caregivers provide reliable support every day, ensuring my mother feels safe and secure. I can't express how much their care means to us.",
+    name: "Olivia Reynolds",
+    initials: "OR",
+  },
+  {
+    title: "Respectful Care",
+    text: "The team is incredible! They treat my father with respect and dignity, ensuring he remains comfortable and engaged throughout the day. Truly exceptional people.",
+    name: "James Caldwell",
+    initials: "JC",
+  },
+  {
+    title: "Peace of Mind",
+    text: "Knowing that my mother is in such capable hands gives our whole family peace of mind. The caregivers are attentive, respectful, and dedicated to ensuring her comfort.",
+    name: "Evelyn Harper",
+    initials: "EH",
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.08, ease: "easeOut" },
+  }),
+};
+
+const ContactSection: React.FC = () => {
   return (
-    <section className="w-full bg-white py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Heading */}
+    <section className="bg-[#faf9f7] py-24">
+      <Container>
+
+        {/* Header row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="flex items-end justify-between mb-14 gap-6 flex-wrap"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#04398c]">
-            Contact Us
-          </h2>
-          <p className="mt-3 text-gray-600 max-w-xl mx-auto">
-            Have a question or want to get in touch? Fill out the form below and
-            our team will respond as soon as possible.
-          </p>
+          <div>
+            <p className="text-[#C0392B] text-xs font-bold tracking-widest uppercase flex items-center gap-1 mb-3">
+              <span>+</span> Testimonials
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
+              Real Experiences, Real Results
+            </h2>
+          </div>
+          <Link
+            href="/faq"
+            className="shrink-0 px-6 py-2.5 rounded-full bg-[#C0392B] text-white text-sm font-semibold hover:bg-[#e04535] transition shadow-md"
+          >
+            More Testimonials
+          </Link>
         </motion.div>
 
-        {/* Form */}
-        <motion.form
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6"
-        >
-          {/* Name */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700">
-                First Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700">
-                Last Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-              />
-            </div>
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700">
-              Email Address <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              required
-              className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-            />
-          </div>
-
-          {/* Phone + ZIP */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                required
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700">
-                ZIP Code <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-              />
-            </div>
-          </div>
-
-          {/* How did you learn about us */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700">
-              How Did You Learn About Us
-            </label>
-            <select className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]">
-              <option value="">Select an option</option>
-              <option>Friend or Family</option>
-              <option>Google Search</option>
-              <option>Social Media</option>
-              <option>Existing Customer</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          {/* Existing Customer */}
-          <div className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              id="existingCustomer"
-              className="w-5 h-5 accent-[#04398c]"
-            />
-            <label
-              htmlFor="existingCustomer"
-              className="text-sm text-gray-700 font-medium"
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="bg-[#f0eeeb] rounded-2xl p-8 flex flex-col gap-4"
             >
-              I am an existing customer
-            </label>
-          </div>
+              {/* Quote mark */}
+              <div className="text-[#C0392B] text-4xl font-serif leading-none">"</div>
 
-          {/* Message */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700">
-              Please Enter Your Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              required
-              rows={5}
-              className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#04398c]"
-            />
-          </div>
+              {/* Title */}
+              <h3 className="text-lg font-bold text-gray-900">{t.title}</h3>
 
-          {/* Mobile Opt-In */}
-          <div className="flex items-start gap-3">
-            <input
-              type="checkbox"
-              id="mobileOptIn"
-              className="mt-1 w-5 h-5 accent-[#04398c]"
-            />
-            <label
-              htmlFor="mobileOptIn"
-              className="text-sm text-gray-600 leading-relaxed"
-            >
-              I agree to receive mobile messages and updates. Message and data
-              rates may apply.
-            </label>
-          </div>
+              {/* Text */}
+              <p className="text-gray-500 text-sm leading-relaxed flex-1">{t.text}</p>
 
-          {/* Submit */}
-          <div className="pt-4 text-center">
-            <button
-              type="submit"
-              className="
-                inline-flex items-center justify-center
-                rounded-full
-                bg-[#04398c]
-                px-8 py-3
-                text-white font-semibold
-                shadow-md
-                transition
-                hover:bg-[#032f73]
-                hover:scale-105
-              "
-            >
-              Submit Message
-            </button>
-          </div>
-        </motion.form>
-      </div>
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-2 border-t border-gray-200 mt-2">
+                <div className="w-10 h-10 rounded-full bg-[#C0392B]/20 flex items-center justify-center text-[#C0392B] text-xs font-bold shrink-0">
+                  {t.initials}
+                </div>
+                <p className="text-sm font-semibold text-gray-800">{t.name}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+      </Container>
     </section>
   );
 };
